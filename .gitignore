@@ -1,4 +1,15 @@
+
+# Python
 venv/
-.env
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Secrets
+.env
+
+# Generated vector database
+chroma_db/
+
+# Test and cache files
+.pytest_cache/
+.streamlit/secrets.toml
