@@ -27,3 +27,14 @@ def test_validation_passes_for_answer_without_price_claim():
     result = validate_answer(answer, context)
 
     assert result == "Validation passed."
+
+
+def test_validation_fails_when_order_id_is_wrong():
+    context = "Order ID 10718. Total price 3463.0."
+    answer = "The total price of order 99999 is 3463.0."
+
+    result = validate_answer(answer, context)
+
+    assert result == (
+        "Validation failed: order ID not found in context."
+    )
